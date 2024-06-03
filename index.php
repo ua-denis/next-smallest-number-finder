@@ -1,24 +1,13 @@
-1. Install Composer Dependencies:
+<?php
 
-```
-composer install
-```
+require_once __DIR__.'/vendor/autoload.php';
 
-2. Run PHPUnit Tests:
+use App\Algorithms\BinarySearch;
+use App\Algorithms\ConstantTimeLookup;
+use App\Algorithms\LinearSearch;
+use App\Application\NextSmallestNumberFinder;
 
-```
-vendor/bin/phpunit --colors=always --testdox tests
-```
 
-3. Checking the work. Run index.php
-
-```
-php index.php
-```
-
-### Examples of using:
-
-```
 $dataset = [3, 4, 6, 9, 10, 12, 14, 15, 17, 19, 21];
 
 $finder = new NextSmallestNumberFinder(new ConstantTimeLookup());
@@ -50,4 +39,3 @@ echo 'Next smallest 14: '.$finder->findNextSmallest($dataset, 14)."\n";
 echo 'Next smallest 18: '.$finder->findNextSmallest($dataset, 18)."\n";
 echo 'Next smallest 21: '.$finder->findNextSmallest($dataset, 21)."\n";
 echo 'Next smallest 23: '.$finder->findNextSmallest($dataset, 23)."\n";
-```
